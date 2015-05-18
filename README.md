@@ -10,7 +10,7 @@ Instructions
 If the function was written well and/or documented to a decent standard, one
 would not have to make the effort.  I hate stupid tests like this.  THey
 show ernormous disrespect for the people who bother to respond to your
-position requirements.  "we have written something CLEVER and CRYPTIC.
+position requirements.  "we have written something CLEVER and CRYPTIC".
 Now you can waste your time figuring it out.
 
 2. Write a unit test for it
