@@ -3,6 +3,8 @@
 ### Made rightous by Mark Addinall - 2015
 ___
 
+Here are the instructions that came with the coding test.
+___
 Instructions
 
 1. Figure out what this function does
@@ -19,4 +21,22 @@ Now you can waste your time figuring it out.
 NOTE: Do regular commits that show agile style iterations through the problem.
 If you prefer a different language, you can provide your solution in PHP, 
 Python or Javascript too.
+___
+
+I normally don' even bother doing these tests as I find them somewhat insulting.  However, I am mildly interested in this position as it broaches on Health and the Life Sciences. So...
+
+##Methodology
+
+###Reverse Engineer
+- Find out by reverse engineering WHAT the code is SUPPOSED to do (sans documentation).
+- Test that assumption
+- Refactor into somethis less horrible
+
+The directory structure is as follows:
+
+- original (code as cloned from github)
+- in_progress (reverse engineering including data structure predictions)
+- refactor (new code including test suites)
+
+
 
