@@ -144,7 +144,8 @@ Here is a program run
 ```
 #### Sorted table
 
-``` ---------grouped products---------------------
+```
+---------grouped products---------------------
 [
   { brand => "Apple", type => 1 },
   { brand => "Cumquat", type => 4 },
