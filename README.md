@@ -48,7 +48,7 @@ Here is a program run
 
 #### Unsorted table
 
-` -----------products-------------------
+``` -----------products-------------------
 [
   { brand => "Apple", type => 1 },
   { brand => "Tomato", type => 1 },
@@ -141,10 +141,10 @@ Here is a program run
 ==================
 1
 ==================
-`
+```
 #### Sorted table
 
-` ---------grouped products---------------------
+``` ---------grouped products---------------------
 [
   { brand => "Apple", type => 1 },
   { brand => "Cumquat", type => 4 },
@@ -156,4 +156,4 @@ Here is a program run
   { brand => "Tomato", type => 1 },
 ]
  ------------------------------
-`
+```
