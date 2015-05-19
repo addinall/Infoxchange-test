@@ -20,8 +20,14 @@
 #
 package SillyFunction;
 
-#use strict;
+
+# turn on some error trapping initially at least.
+
+use strict;
 use warnings;
+
+# use the Dumper to have a look at the way this thing treats data
+# fed to it
 
 use Data::Dump qw(dump);
 
@@ -29,6 +35,17 @@ sub group_products {
 my $products = shift;
 my %brand_type = ();
 my $grouped_products = [];
+
+# the initial reverse engineering of this mess is to first find out
+# what sort of data it likes to eat.  I have a general idea, but
+# we need to test those assumptions.
+#
+# This is clearly a method that sorts data elements into some
+# sort of order.  Forensics will tell us what the data MAY look
+# like.  As with all un-stated algorithms, there is likely to
+# be MORE than one solution.  This is a stupid way of doing
+# software engineering.
+
 
 
 print "\n -----------products-------------------\n";

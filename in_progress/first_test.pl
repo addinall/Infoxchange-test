@@ -10,6 +10,6 @@ use Data::Dump qw(dump);
 # department sits back smugly actually thinking that the retards
 # have any real worth.
 # first thing to do is feed the thing some data and see what the
-# package does or does not do.  M. Addinall.
+# package does or does not do.
 
 
