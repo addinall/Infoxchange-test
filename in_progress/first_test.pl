@@ -36,14 +36,14 @@ use Data::Dump qw(dump);    # data dumper used occasionally to examine structure
 
 
     my @products = (
-        {brand  => "Acer",          type => "1"},
-        {brand  => "Toshiba",       type => "1"},
-        {brand  => "Envy",          type => "1"},
-        {brand  => "Thinkpad",      type => "1"},
-        {brand  => "Lenova",        type => "2"},
-        {brand  => "iPad",          type => "3"},
-        {brand  => "Chromebook",    type => "4"},
-        {brand  => "Kindle",        type => "5"});
+        {brand  => "Apple",             type => "1"},
+        {brand  => "Tomato",            type => "1"},
+        {brand  => "Pear",              type => "1"},
+        {brand  => "Orange",            type => "1"},
+        {brand  => "Grape",             type => "2"},
+        {brand  => "Kiwi",              type => "3"},
+        {brand  => "Cumquat",           type => "4"},
+        {brand  => "Grapefruit",        type => "5"});
 
     
     # print dump(group_products(@products));
@@ -51,6 +51,114 @@ use Data::Dump qw(dump);    # data dumper used occasionally to examine structure
 
     print dump(SillyFunction::group_products(\@products));
 
-    # yep
+# here is a program execution trace of this run.  I am sure it is
+# not doing what the author possibly intended it to do.
 
+# 
+#  -----------products-------------------
+# [
+#   { brand => "Apple", type => 1 },
+#   { brand => "Tomato", type => 1 },
+#   { brand => "Pear", type => 1 },
+#   { brand => "Orange", type => 1 },
+#   { brand => "Grape", type => 2 },
+#   { brand => "Kiwi", type => 3 },
+#   { brand => "Cumquat", type => 4 },
+#   { brand => "Grapefruit", type => 5 },
+# ]
+#  --------- --------------------
+# { brand => "Apple", type => 1 }
+#  --------- --------------------
+# { brand => "Tomato", type => 1 }
+#  --------- --------------------
+# { brand => "Pear", type => 1 }
+#  --------- --------------------
+# { brand => "Orange", type => 1 }
+#  --------- --------------------
+# { brand => "Grape", type => 2 }
+#  --------- --------------------
+# { brand => "Kiwi", type => 3 }
+#  --------- --------------------
+# { brand => "Cumquat", type => 4 }
+#  --------- --------------------
+# { brand => "Grapefruit", type => 5 }
+#  ------------------brand type------------
+# (
+#   "Kiwi",
+#   { 3 => 1 },
+#   "Pear",
+#   { 1 => 1 },
+#   "Cumquat",
+#   { 4 => 1 },
+#   "Grape",
+#   { 2 => 1 },
+#   "Grapefruit",
+#   { 5 => 1 },
+#   "Tomato",
+#   { 1 => 1 },
+#   "Apple",
+#   { 1 => 1 },
+#   "Orange",
+#   { 1 => 1 },
+# )
+#  --------------brand----------------
+# "Apple"
+# ==================
+# 1
+# ==================
+# 
+#  --------------brand----------------
+# "Cumquat"
+# ==================
+# 4
+# ==================
+# 
+#  --------------brand----------------
+# "Grape"
+# ==================
+# 2
+# ==================
+# 
+#  --------------brand----------------
+# "Grapefruit"
+# ==================
+# 5
+# ==================
+# 
+#  --------------brand----------------
+# "Kiwi"
+# ==================
+# 3
+# ==================
+# 
+#  --------------brand----------------
+# "Orange"
+# ==================
+# 1
+# ==================
+# 
+#  --------------brand----------------
+# "Pear"
+# ==================
+# 1
+# ==================
+# 
+#  --------------brand----------------
+# "Tomato"
+# ==================
+# 1
+# ==================
+# 
+#  ---------grouped products---------------------
+# [
+#   { brand => "Apple", type => 1 },
+#   { brand => "Cumquat", type => 4 },
+#   { brand => "Grape", type => 2 },
+#   { brand => "Grapefruit", type => 5 },
+#   { brand => "Kiwi", type => 3 },
+#   { brand => "Orange", type => 1 },
+#   { brand => "Pear", type => 1 },
+#   { brand => "Tomato", type => 1 },
+# ]
+#  ------------------------------
 

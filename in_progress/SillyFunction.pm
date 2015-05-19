@@ -33,6 +33,16 @@ use warnings;
 use Data::Dump qw(dump);
 
 sub group_products {
+
+# the name of this method is incorrect.  without modifying the algorithm
+# enclosed in this code, it does not "GROUP" anything, not in the
+# traditional sense of the word anyway.  It ORDERs by BRAND in a rather round-about way.
+#
+# I have a strong suspicion that the algorithm coded may not be doing what 
+# was intended.  However, since I have no specification as to WHAT is required,
+# to refactor it to do something else would be out of scope.
+
+
 my $products = shift;
 my %brand_type = ();
 my $grouped_products = [];
@@ -50,32 +60,35 @@ my $grouped_products = [];
 
 
 print "\n -----------products-------------------\n";
-dump($products);
+print dump($products);
 
-foreach (@{$products})
-{
-print "\n ------------------------------\n";
-dump($_);
-print "\n ------------------------------\n";
-$brand_type{$_->{brand}} ||= {};
-$brand_type{$_->{brand}}->{$_->{type}} = 1;
+foreach (@{$products}) {
+    print "\n --------- --------------------\n";
+    print dump($_);
+    $brand_type{$_->{brand}} ||= {};
+    $brand_type{$_->{brand}}->{$_->{type}} = 1;         # de-reference type
 }
+
 print "\n ------------------brand type------------\n";
-dump(%brand_type);
+print dump(%brand_type);
 
-foreach (sort keys %brand_type)
-{
-my $brand = $_;
-print "\n --------------brand----------------\n";
-print $brand;
-foreach (sort keys %{$brand_type{$brand}}) {
-push(@{$grouped_products}, { brand => $brand, type => $_});
+foreach (sort keys %brand_type) {
+    my $brand = $_;
+    print "\n --------------brand----------------\n";
+    print dump($brand);
+    foreach (sort keys %{$brand_type{$brand}}) {
+        print "\n==================\n";
+        print dump($_);
+        print "\n==================\n";
+        push(@{$grouped_products}, { brand => $brand, type => $_});
+    }
 }
-}
+
+
 print "\n ---------grouped products---------------------\n";
-dump($grouped_products);
+print dump($grouped_products);
 print "\n ------------------------------\n";
-$grouped_products;
+print $grouped_products;
 }
 
 1;
