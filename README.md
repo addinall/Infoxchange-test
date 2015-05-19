@@ -43,6 +43,12 @@ GROUP BY ...
 
 the array is just sorted on one element.
 
+If this is the requirement then this one line can replace the Package
+```
+    my @sorted = sort { $a->{brand} cmp $b->{brand} } @products;
+```
+So, as one of the instructions was to run this as an Agile project, right now I feel it is the time to point out to SCRUMASTER or my coding peer that this is a bit silly.
+
 Here is a program run
 
 

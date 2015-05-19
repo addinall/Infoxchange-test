@@ -45,9 +45,11 @@ use Data::Dump qw(dump);    # data dumper used occasionally to examine structure
         {brand  => "Cumquat",           type => "4"},
         {brand  => "Grapefruit",        type => "5"});
 
-    
-    # print dump(group_products(@products));
-    # nope
+
+    # this next line does EXACTLY the same thing as the entire Package
+
+    my @sorted = sort { $a->{brand} cmp $b->{brand} } @products;
+
 
     print dump(SillyFunction::group_products(\@products));
 

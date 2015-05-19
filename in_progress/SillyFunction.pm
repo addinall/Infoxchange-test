@@ -88,7 +88,6 @@ foreach (sort keys %brand_type) {
 print "\n ---------grouped products---------------------\n";
 print dump($grouped_products);
 print "\n ------------------------------\n";
-print $grouped_products;
 }
 
 1;
